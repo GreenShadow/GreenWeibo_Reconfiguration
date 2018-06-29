@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">GreenWeibo</string>
 
+    <string name="auth_login">Auth login</string>
     <string name="auth_success">Auth success</string>
     <string name="auth_cancel">Auth cancel</string>
     <string name="auth_error">Auth error</string>
+
+    <string name="title_home">Home</string>
 </resources>

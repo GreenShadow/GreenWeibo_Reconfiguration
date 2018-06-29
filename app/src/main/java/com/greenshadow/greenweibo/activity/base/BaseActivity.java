@@ -1,4 +1,4 @@
-package com.greenshadow.greenweibo.activity;
+package com.greenshadow.greenweibo.activity.base;
 
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
@@ -10,16 +10,16 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private Toast mToast = null;
 
-    protected void log(String msg) {
-        Log.d(LOG_TAG, msg);
+    protected void log(String tag, String msg) {
+        Log.d(LOG_TAG, "[" + tag + "]" + msg);
     }
 
-    protected void loge(String msg) {
-        Log.e(LOG_TAG, msg);
+    protected void loge(String tag, String msg) {
+        Log.e(LOG_TAG, "[" + tag + "]" + msg);
     }
 
-    protected void printStack() {
-        Log.wtf(LOG_TAG, new Exception());
+    protected void printStack(String tag, String msg) {
+        Log.wtf(LOG_TAG, "[" + tag + "]" + msg, new Throwable());
     }
 
     protected void toast(CharSequence msg) {

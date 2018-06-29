@@ -3,10 +3,9 @@ package com.greenshadow.greenweibo.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.greenshadow.greenweibo.R;
+import com.greenshadow.greenweibo.activity.base.BaseActivity;
 import com.sina.weibo.sdk.auth.AccessTokenKeeper;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WbAuthListener;
@@ -17,6 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AuthActivity extends BaseActivity implements WbAuthListener {
+    private static final String TAG = AuthActivity.class.getSimpleName();
     private SsoHandler mSsoHandler;
 
     @OnClick(R.id.btn_auth)
@@ -54,9 +54,8 @@ public class AuthActivity extends BaseActivity implements WbAuthListener {
 
     @Override
     public void onFailure(WbConnectErrorMessage errorMessage) {
-        loge(errorMessage.getErrorCode()
-        );
-        loge(errorMessage.getErrorMessage());
+        loge(TAG, errorMessage.getErrorCode());
+        loge(TAG, errorMessage.getErrorMessage());
         toast(R.string.auth_error);
     }
 }

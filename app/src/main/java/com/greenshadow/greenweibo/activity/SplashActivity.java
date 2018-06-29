@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.BaseAdapter;
 
 import com.greenshadow.greenweibo.R;
+import com.greenshadow.greenweibo.activity.base.BaseActivity;
 import com.sina.weibo.sdk.auth.AccessTokenKeeper;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 
@@ -27,7 +26,7 @@ public class SplashActivity extends BaseActivity {
                     i = new Intent(SplashActivity.this, AuthActivity.class);
                     break;
                 case HOME:
-                    i = new Intent(SplashActivity.this, HomeActivity.class);
+                    i = new Intent(SplashActivity.this, MainActivity.class);
                     break;
                 default:
                     i = null;

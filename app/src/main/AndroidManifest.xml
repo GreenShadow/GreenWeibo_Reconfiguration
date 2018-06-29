@@ -19,7 +19,7 @@
         <activity
             android:name=".activity.SplashActivity"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +29,9 @@
 
         <activity
             android:name=".activity.AuthActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
 
-        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.MainActivity" />
     </application>
 
 </manifest>
