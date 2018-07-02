@@ -2,16 +2,114 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding">
 
-    <LinearLayout
+    <!-- User panel -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_padding">
 
         <ImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/default_padding"
+            android:src="@drawable/icon" />
+
+        <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
-            android:src="@drawable/icon"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/user_avatar"
+            android:layout_marginTop="@dimen/user_position"
+            android:layout_toEndOf="@+id/user_avatar"
+            android:text="Name"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/user_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/user_avatar"
+            android:layout_marginBottom="@dimen/user_position"
+            android:layout_toEndOf="@+id/user_avatar"
+            android:text="weibo.com" />
+
+        <TextView
+            android:id="@+id/weibo_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/user_device"
+            android:layout_marginStart="@dimen/default_padding"
+            android:layout_toEndOf="@+id/user_device"
+            android:text="8分钟前" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/weibo_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_padding"
+        android:text="@string/test_long_text_140"
+        android:textColor="?attr/titleTextColor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_padding"
+        android:text="img" />
+
+    <LinearLayout
+        android:id="@+id/weibo_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_origin_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/weibo_origin_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
+            android:text="@string/test_long_text_140" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
+            android:text="img" />
     </LinearLayout>
 
+    <!-- Function button panel -->
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/function_button_height"
+        android:orientation="horizontal">
+
+        <com.greenshadow.greenweibo.view.FunctionButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@drawable/forward"
+            app:name="Forward" />
+
+        <com.greenshadow.greenweibo.view.FunctionButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@drawable/comment"
+            app:name="Comments" />
+
+        <com.greenshadow.greenweibo.view.FunctionButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@drawable/like"
+            app:name="Like" />
+    </LinearLayout>
 </LinearLayout>

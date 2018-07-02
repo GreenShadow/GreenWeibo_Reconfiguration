@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.widget.TextView;
 
 import com.greenshadow.greenweibo.R;
 import com.greenshadow.greenweibo.activity.base.ToolBarBaseActivity;
@@ -15,6 +16,7 @@ public class MainActivity extends ToolBarBaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.drawer_home) DrawerLayout mDrawer;
+    @BindView(R.id.test) TextView test;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,5 +45,10 @@ public class MainActivity extends ToolBarBaseActivity {
     protected void onStart() {
         super.onStart();
 //        getSupportFragmentManager().beginTransaction().
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
     }
 }
