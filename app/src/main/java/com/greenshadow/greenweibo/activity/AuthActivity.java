@@ -43,8 +43,10 @@ public class AuthActivity extends BaseActivity implements WbAuthListener {
 
     @Override
     public void onSuccess(Oauth2AccessToken token) {
-        AccessTokenKeeper.writeAccessToken(this, token);
+        AccessTokenKeeper.writeAccessToken(getApplicationContext(), token);
         toast(R.string.auth_success);
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     @Override
